@@ -1,5 +1,4 @@
 import { createOpenAI } from "@ai-sdk/openai";
-import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 import { generateText } from "ai";
 
@@ -7,7 +6,7 @@ type ResponseData = {
   message: string;
 };
 
-export async function GET(req: NextApiRequest) {
+export async function GET() {
   const groq = createOpenAI({
     baseURL: "https://api.groq.com/openai/v1",
     apiKey: process.env.GROQ_API_KEY,
