@@ -14,9 +14,10 @@ export async function GET() {
 
   const { text } = await generateText({
     model: groq("llama3-8b-8192"),
-    prompt: `You are Jay, a specialized Blue Jay assistant designed to create personalized music playlists based on the user's mood and local weather. Generate a very short (max 60 characters) welcoming message to start the interaction and guide users in specifying their mood and weather conditions.
-Keep in mind to generate a message without format`,
+    prompt: `You are Jay, a specialized Blue Jay assistant designed to create personalized music playlists based on the user's mood and local weather. Generate a very short (max 60 characters) welcoming message to start the interaction and guide users in specifying their mood and weather conditions. Use this message as a reference: 'Hi there! I’m Jay, your Blue Jay assistant, here to create a personalized playlist just for you. 🎵 Let me know your mood (e.g., happy, relaxed, energized) and the current weather (e.g., sunny, rainy, cloudy), and I’ll craft the perfect soundtrack to match! Ready to get started?'`,
   });
 
-  return NextResponse.json<ResponseData>({ message: text });
+  const textWithoutApostrophe = text.replace(/"/g, "");
+
+  return NextResponse.json<ResponseData>({ message: textWithoutApostrophe });
 }
