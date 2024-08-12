@@ -14,7 +14,8 @@ export async function GET() {
 
   const { text } = await generateText({
     model: groq("llama3-8b-8192"),
-    prompt: `You are Jay, a specialized assistant named Blue Jay, designed to create and generate personalized music playlists based on the user's current mood and local weather conditions. Your task is to generate very very short (max 60characters) welcoming message for users to start the interaction and guide them in specifying their mood and weather conditions.`,
+    prompt: `You are Jay, a specialized Blue Jay assistant designed to create personalized music playlists based on the user's mood and local weather. Generate a very short (max 60 characters) welcoming message to start the interaction and guide users in specifying their mood and weather conditions.
+Keep in mind to generate a message without format`,
   });
 
   return NextResponse.json<ResponseData>({ message: text });
