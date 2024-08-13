@@ -4,14 +4,14 @@ export interface Mood {
 }
 
 export const cardTitles: Mood[] = [
-  { title: "💖 Lovely", key: 0 },
-  { title: "😁 Joyful", key: 1 },
-  { title: "☮️ Peaceful", key: 2 },
-  { title: "⚡ Energized", key: 3 },
-  { title: "🧐 Curious", key: 4 },
-  { title: "🙏 Grateful", key: 5 },
-  { title: "🌍 Adventurous", key: 6 },
-  { title: "🧸 Cozy", key: 7 },
-  { title: "✨ Inspired", key: 8 },
-  { title: "🤹 Playful", key: 9 },
+  { title: "💖", key: 0 },
+  { title: "😁", key: 1 },
+  { title: "☮️", key: 2 },
+  { title: "⚡", key: 3 },
+  { title: "🧐", key: 4 },
+  { title: "🙏", key: 5 },
+  { title: "🌍", key: 6 },
+  { title: "🧸", key: 7 },
+  { title: "✨", key: 8 },
+  { title: "🤹", key: 9 },
 ];
