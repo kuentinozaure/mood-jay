@@ -3,9 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import JayMessage from "@/components/business-component/jay-message";
 import Jay from "@/components/business-component/jay";
-import { User } from "lucide-react";
+
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   const [welcomingMessage, setWelcomingMessage] = useState("");
 
   const fetchWelcomingMessage = async () => {
@@ -19,16 +21,16 @@ export default function Home() {
   }, []);
 
   const userClickReady = () => {
-    console.log("User is ready to start the interaction");
+    router.push("/mood");
   };
 
   return (
-    <main className="p-8 w-screen h-screen flex flex-col bg-[#98C1D9] gap-8">
+    <div>
       <JayMessage
         messageToShow={welcomingMessage}
         onReadyClick={() => userClickReady()}
       />
       <Jay />
-    </main>
+    </div>
   );
 }

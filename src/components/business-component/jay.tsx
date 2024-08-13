@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-export default function Jay() {
+export interface JayProps {
+  audioFile?: string;
+}
+export default function Jay(props: JayProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -26,7 +29,10 @@ export default function Jay() {
       </div>
 
       <audio ref={audioRef} controls className="hidden">
-        <source src={"/bird_sound.mp3"} type="audio/mp3" />
+        <source
+          src={props.audioFile ? props.audioFile : "/bird_sound.mp3"}
+          type="audio/mp3"
+        />
       </audio>
     </div>
   );

@@ -16,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="p-8 w-screen h-screen flex flex-col bg-[#98C1D9] gap-8">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
