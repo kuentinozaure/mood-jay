@@ -16,7 +16,7 @@ export default function JayMessage(props: JayMessageProps) {
         <CardHeader>
           <CardDescription>{props.messageToShow}</CardDescription>
           <div className="flex flex-row justify-end w-auto hover:cursor-pointer text-[#3077E3]">
-            <span onClick={handleReadyClick}>I'm ready</span>
+            <span onClick={handleReadyClick}>I m ready</span>
           </div>
         </CardHeader>
       </Card>
